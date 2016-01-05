@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 44.468 sec <<< FAILURE! - in TestSuite
+correctLoginTest(tests.LoginTest)  Time elapsed: 14.392 sec  <<< FAILURE!
+java.lang.AssertionError: h1 headline correct expected [Profle] but found [Profile]
+	at tests.LoginTest.correctLoginTest(LoginTest.java:38)
+
