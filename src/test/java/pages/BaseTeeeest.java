@@ -12,7 +12,9 @@ public class BaseTeeeest {
 	public static void beforeSuite() {
 		System.out.println("before suite in basetest");
 		BasePage.driver = settings.getDriver();
+		
 		BasePage.settings = settings;
+		BasePage.driver.manage().deleteAllCookies();
 		BasePage.driver.get(settings.getBaseUrl());
 		if (!settings.getBrowser().equals(BrowserType.HTMLUNIT))
 			BasePage.driver.manage().window().maximize();
