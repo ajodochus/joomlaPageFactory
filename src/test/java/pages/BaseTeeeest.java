@@ -20,7 +20,7 @@ public class BaseTeeeest {
 
 	@AfterTest(alwaysRun = true)
 	public static void afterClass2() {
-		//BasePage.driver.quit();
+		BasePage.driver.quit();
 	}
 
 }

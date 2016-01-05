@@ -35,7 +35,7 @@ public class LoginTest extends BaseTeeeest   {
     public void correctLoginTest() {
     	user = admin();
         authorHomePage = authorLoginPage.loginAs(user);
-        Assert.assertEquals(authorHomePage.getH1Headline(), "Profle", "h1 headline correct");
+        Assert.assertEquals(authorHomePage.getH1Headline(), "Profile", "h1 headline *Profile* correct");
     }
 
     
