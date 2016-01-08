@@ -20,14 +20,14 @@ public class AuthorLoginPage extends BasePage {
 	 @FindBy(how=How.ID, using="remember")
 	 	private WebElement chkb_remember;
 
-	    public AuthorHomePage loginAs(User user) {
+	    public AuthorProfilePage loginAs(User user) {
 	    	logger.info("input username");
 	    	tf_username.sendKeys(user.getUsername());
 	    	logger.info("input username");
 			tf_password.sendKeys(user.getPassword());
 			logger.info("input username");
 			btn_submit.submit();
-	        return initPage(AuthorHomePage.class);		
+	        return initPage(AuthorProfilePage.class);		
 	        
 	    }
 

@@ -13,7 +13,7 @@ import pages.BaseTeeeest;
 import pages.BasicPage;
 import pages.HomePage;
 import pages.AuthorLoginPage;
-import pages.AuthorHomePage;
+import pages.AuthorProfilePage;
 import pages.User;
 
 
@@ -21,7 +21,7 @@ public class LoginTest extends BaseTeeeest   {
 	final static Logger logger = Logger.getLogger(LoginTest.class);
 	private BasicPage basicPage;
 	private AuthorLoginPage authorLoginPage;
-	private AuthorHomePage authorHomePage;
+	private AuthorProfilePage authorHomePage;
 	private User user;
 	
 	
@@ -36,9 +36,12 @@ public class LoginTest extends BaseTeeeest   {
     	user = admin();
         authorHomePage = authorLoginPage.loginAs(user);
         Assert.assertEquals(authorHomePage.getH1Headline(), "Profile", "h1 headline *Profile* correct");
+        logger.info(authorHomePage.getTitle());
     }
-
-    
+    @Test(groups={"test"})
+    public void loggerTest(){
+    //
+    }
     public void incorrectLoginTest() {
         user.setPassword(user.getPassword() + user.getPassword());
         authorLoginPage.loginAs(user);
