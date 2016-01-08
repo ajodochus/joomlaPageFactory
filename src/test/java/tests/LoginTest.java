@@ -14,6 +14,7 @@ import pages.BasicPage;
 import pages.HomePage;
 import pages.AuthorLoginPage;
 import pages.AuthorProfilePage;
+import pages.BasePage;
 import pages.User;
 
 
@@ -27,12 +28,15 @@ public class LoginTest extends BaseTeeeest   {
 	
     @BeforeMethod(alwaysRun = true)
     public void openLoginPage() {
-        basicPage = initPage(BasicPage.class);       
-        authorLoginPage = basicPage.klick_AuthorLogin();    
+       // basicPage = initPage(BasicPage.class);       
+        //authorLoginPage = basicPage.klick_AuthorLogin();    
     }
 
-    @Test
+    @Test(groups={"login"})
     public void correctLoginTest() {
+    	
+    	BasePage.driver.get(getPropeties("urlAuthorLogin"));
+    	authorLoginPage = initPage(AuthorLoginPage.class);
     	user = admin();
         authorHomePage = authorLoginPage.loginAs(user);
         Assert.assertEquals(authorHomePage.getH1Headline(), "Profile", "h1 headline *Profile* correct");
