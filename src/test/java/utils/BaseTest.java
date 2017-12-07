@@ -1,4 +1,4 @@
-package pages;
+package utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,21 +11,22 @@ import org.testng.annotations.Test;
 
 import tests.LoginTest;
 
-public class BaseTeeeest {
+public class BaseTest {
 	private static Settings settings = new Settings();
-//final static Logger logger = Logger.getLogger(LoginTest.class);
+	// final static Logger logger = Logger.getLogger(LoginTest.class);
 
 	@BeforeSuite(alwaysRun = true)
 	public static void beforeSuite() {
 		System.out.println("before suite in basetest");
 		BasePage.driver = settings.getDriver();
-		
+
 		BasePage.settings = settings;
 		BasePage.driver.manage().deleteAllCookies();
-		/*BasePage.driver.get(settings.getBaseUrl());
-		if (!settings.getBrowser().equals(BrowserType.HTMLUNIT))
-			BasePage.driver.manage().window().maximize();
-			*/
+		/*
+		 * BasePage.driver.get(settings.getBaseUrl()); if
+		 * (!settings.getBrowser().equals(BrowserType.HTMLUNIT))
+		 * BasePage.driver.manage().window().maximize();
+		 */
 	}
 
 	@AfterTest(alwaysRun = true)
@@ -33,14 +34,14 @@ public class BaseTeeeest {
 		BasePage.driver.quit();
 	}
 
-	public String getPropeties(String key){
-String value = "not set";
-		
+	public String getPropeties(String key) {
+		String value = "not set";
+
 		String resourceName = "selenium.properties"; // could also be a constant
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		Properties props = new Properties();
-		try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
-		    props.load(resourceStream);
+		try (InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
+			props.load(resourceStream);
 			// get the property value and print it out
 			System.out.println(props.getProperty(key));
 			value = props.getProperty(key);
@@ -48,7 +49,8 @@ String value = "not set";
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return value;
 	}
+
 }

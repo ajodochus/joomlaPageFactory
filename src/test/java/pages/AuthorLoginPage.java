@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import utils.BasePage;
+import utils.User;
+
 
 
 
@@ -19,7 +22,10 @@ public class AuthorLoginPage extends BasePage {
 	    private WebElement btn_submit;
 	 @FindBy(how=How.ID, using="remember")
 	 	private WebElement chkb_remember;
+	 public String test = "url von Login page";
 
+
+	 
 	    public AuthorProfilePage loginAs(User user) {
 	    	logger.info("input username");
 	    	tf_username.sendKeys(user.getUsername());
@@ -40,4 +46,5 @@ public class AuthorLoginPage extends BasePage {
 	    public static final String UPASSWORD_TEXT_FIELD_XPATH = "//input[@id='j_password']";
 	    public static final String ULOGIN_BUTTON_XPATH = "//div[@class='form']/form/input";
 	    public static final String REGISTER_LINK_XPATH = "//a[contains(text(),'Register')]";
+	  
 }

@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.apache.maven.surefire.shade.org.apache.maven.shared.utils.StringUtils;
 
+import utils.UnknownBrowserException;
+
 public enum BrowserType {
     FIREFOX,
     IE,

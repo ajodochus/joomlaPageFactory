@@ -1,4 +1,4 @@
-package pages;
+package utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+
+import pages.BrowserType;
 
 public class Settings {
 

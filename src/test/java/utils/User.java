@@ -1,4 +1,4 @@
-package pages;
+package utils;
 
 public class User {
     private String username;

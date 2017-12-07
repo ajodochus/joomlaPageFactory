@@ -1,14 +1,16 @@
 package pages;
 
-import static pages.Utils.isElementPresent;
-import static pages.BasePage.initPage;
 import static pages.BasicPage.initPage;
+import static utils.BasePage.initPage;
+import static utils.Utils.isElementPresent;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import utils.BasePage;
 
 
 

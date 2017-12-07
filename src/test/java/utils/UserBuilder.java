@@ -1,5 +1,4 @@
-package pages;
-
+package utils;
 
 public class UserBuilder {
     public static User admin() {
@@ -15,5 +14,18 @@ public class UserBuilder {
         user.setFname("Hans" + uuid);
         user.setLname("Fritz" + uuid);
         return user;
+    }
+    
+    public static User invalidUser(){
+    	User user = new User("wrong", "wrong");
+    	user.setFname("fn_wrong");
+    	user.setLname("ln_wrong");
+    	return user;
+    }
+    public static User gta_user(){
+    	User user = new User("wissmeier@googlemail.com", "gta1qay2wsx");
+    	user.setFname("gta firstname");
+    	user.setLname("gta lastname");
+    	return user;
     }
 }
